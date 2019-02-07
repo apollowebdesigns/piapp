@@ -1,6 +1,6 @@
 import { defineFeature, loadFeature } from 'jest-cucumber';
 
-const feature = loadFeature('../features/firstscenario.feature');
+const feature = loadFeature('./specs/features/firstscenario.feature');
 
 defineFeature(feature, (test) => {
   test('Launching a SpaceX rocket', ({ given, when, then }) => {
@@ -9,12 +9,12 @@ defineFeature(feature, (test) => {
       console.log('hello');
     });
 
-    when('I launch the rocket', () => {
-      console.log('hello');
+    when('I launch the rocket', async () => {
+      await page.goto('https://google.com');
     });
 
-    then('the rocket should end up in space', () => {
-      console.log('hello');
+    then('the rocket should end up in space', async() => {
+      await expect(page.title()).resolves.toMatch('Google');
     });
 
     then('the booster(s) should land back on the launch pad', () => {

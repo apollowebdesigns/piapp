@@ -1,0 +1,14 @@
+{
+  "preset": "jest-puppeteer",
+  "transform": {
+    "^.+\\.tsx?$": "ts-jest"
+  },
+  "testMatch": [
+    "**/*.steps.ts"
+  ],
+  "moduleFileExtensions": [
+    "js",
+    "ts",
+    "tsx"
+  ]
+}
